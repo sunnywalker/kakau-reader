@@ -48,14 +48,54 @@ export function coerceOkinas(text: string): string {
   );
 }
 
-export function removePunctuation(token: string): {
-  word: string;
-  punctuation: string;
-} {
-  const match = token.match(/^(.+?)([.,;:!?]+)?$/);
+// export function removePunctuation(token: string): {
+//   word: string;
+//   punctuation: string;
+// } {
+//   const match = token.match(/^(.+?)([.,;:!?]+)?$/);
+
+//   return {
+//     word: match?.[1] ?? token,
+//     punctuation: match?.[2] ?? "",
+//   };
+// }
+
+export type ParsedWord = {
+  original: string;
+  leading: string;
+  core: string;
+  trailing: string;
+};
+
+export function removePunctuation(input: string): ParsedWord {
+  const original = input;
+
+  // Allow:
+  // - Letters (\p{L})
+  // - Numbers (\p{N})
+  // - Straight apostrophe '
+  // - ʻokina ʻ (U+02BB)
+  // - LEFT SINGLE QUOTATION MARK ‘ (U+2018)
+  // - RIGHT SINGLE QUOTATION MARK ’ (U+2019)
+  //
+  // Everything else counts as edge punctuation
+  const match = input.match(
+    /^([^\p{L}\p{N}'ʻ‘’]*)([\p{L}\p{N}'ʻ‘’]+)([^\p{L}\p{N}'ʻ‘’]*)$/u,
+  );
+
+  if (!match) {
+    return {
+      original,
+      leading: "",
+      core: input,
+      trailing: "",
+    };
+  }
 
   return {
-    word: match?.[1] ?? token,
-    punctuation: match?.[2] ?? "",
+    original,
+    leading: match[1],
+    core: match[2],
+    trailing: match[3],
   };
 }

@@ -302,7 +302,7 @@ export function Line({ text }: { text: string }) {
       }}
     >
       {text.split(" ").map((token) => {
-        const { word, punctuation } = removePunctuation(token);
+        const { leading, core: word, trailing } = removePunctuation(token);
         //
         const removed = removeHawaiianDiacritics(word);
         const removedDoubleVowel = removeDoubleVowelOkinas(word);
@@ -326,8 +326,9 @@ export function Line({ text }: { text: string }) {
           <>
             <span className="inline-block">
               <ruby>
+                {leading}
                 {text}
-                {punctuation}
+                {trailing}
                 <rt style={{ opacity: `${opacity}%`, userSelect: "none" }}>
                   {showRuby ? word : " "}
                 </rt>
