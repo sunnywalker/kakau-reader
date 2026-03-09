@@ -100,7 +100,12 @@ export function Levels() {
             } else if (is2) {
               setVisibilitySettings((s) => ({ ...s, ...data[3].config }));
             } else if (is3) {
-              setVisibilitySettings((s) => ({ ...s, ...data[0].config }));
+              if (showFurigana) {
+                setShowFurigana(false);
+                // setVisibilitySettings((s) => ({ ...s, ...data[0].config }));
+              } else {
+                setVisibilitySettings((s) => ({ ...s, ...data[0].config }));
+              }
             } else setVisibilitySettings((s) => ({ ...s, ...data[0].config }));
           }}
         >
