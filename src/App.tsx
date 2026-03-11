@@ -43,7 +43,7 @@ function LeftSidebarContainer() {
   return (
     <div
       className={cx(
-        "sm:w-96 w-full print:hidden fixed left-0 top-0 z-12 h-dvh",
+        "sm:w-96 w-full print:hidden fixed left-0 top-0 z-12 h-dvh border-r border-neutral-200",
         {
           hidden: !isOpen,
           block: isOpen,
@@ -62,7 +62,7 @@ function RightSidebarContainer() {
   return (
     <div
       className={cx(
-        "sm:w-96 w-full print:hidden fixed right-0 top-0 z-12 h-dvh",
+        "sm:w-96 w-full print:hidden fixed right-0 top-0 z-12 h-dvh border-l border-neutral-200",
         {
           hidden: !isOpen,
           block: isOpen,

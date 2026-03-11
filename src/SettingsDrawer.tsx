@@ -19,7 +19,7 @@ export function SettingsDrawer() {
   const { modeTK } = useGlobal();
   return (
     <>
-      <div className="absolute w-full h-full border-r border-neutral-200 inset-0 bg-white/98 overscroll-contain overflow-y-auto">
+      <div className="absolute w-full h-full inset-0 bg-white/98 overscroll-contain overflow-y-auto">
         <div className="sticky top-0 w-full z-30 mr-px">
           <DrawerNavFilter />
           <hr className="opacity-15" />
