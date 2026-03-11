@@ -8,9 +8,9 @@ const labels = {
     t: "katau",
   },
 
-  "Ke Kakaupii": {
-    k: "Ke Kakaupii",
-    t: "Ta Kataupii",
+  "Ke Kakau Pii": {
+    k: "Ke Kakau Pii",
+    t: "Ta Katau Pii",
   },
   "Ka Pela Ana": {
     k: "Ka Pela Ana",

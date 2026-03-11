@@ -3,11 +3,28 @@ import { IconTune } from "./material/IconTune";
 import { useGlobal } from "./useGlobal";
 import { IconClose } from "./material/IconClose";
 import cx from "classnames";
-// import { Levels } from "./Levels";
-// import { DictionarySearchBar } from "./DictionarySearchBar";
 
-export function DrawerNav() {
-// { showSearchBar }: { showSearchBar: boolean }
+export function DrawerNavDictionary() {
+  const { setIsSplitView } = useGlobal();
+  return (
+    <div className="w-full bg-white">
+      <div className="w-full flex justify-between items-center gap-4 pt-4 px-4">
+        <div></div>
+
+        <div
+          className="opacity-50 hover:opacity-100 cursor-pointer"
+          onClick={() => {
+            setIsSplitView(false);
+          }}
+        >
+          <IconClose className="w-8" />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export function DrawerNavFilter() {
   const { setIsSplitView } = useGlobal();
   return (
     <div className="w-full bg-white">
@@ -23,11 +40,6 @@ export function DrawerNav() {
           <IconClose className="w-8" />
         </div>
       </div>
-      {/* {showSearchBar && (
-        <div className="flex-1 py-4 px-4">
-          <DictionarySearchBar />
-        </div>
-      )} */}
     </div>
   );
 }

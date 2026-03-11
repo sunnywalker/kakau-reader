@@ -44,9 +44,9 @@ export function AboutDialog() {
               a me ke kahako. Hiki no ke heluhelu me kela kekahi.
             </div>
             <div className="mb-4">
-              E hoohana ana ia ka huaolelo o <APA>kakaupii</APA> ma kahi o ka
+              E hoohana ia ana ka huaolelo o <APA>kakau pii</APA> ma kahi o ka
               huaolelo o <APA>furigana</APA> ma ka olelo Kepani. Ua like no ka
-              laua hana. Na’u i haku i keia huaolelo hou o <APA>kakaupii</APA>.
+              laua hana. Na’u i haku i keia huaolelo hou o <APA>kakau pii</APA>.
             </div>
             <hr className="opacity-20 pt-4 pb-2" />
             <div className="mb-4">

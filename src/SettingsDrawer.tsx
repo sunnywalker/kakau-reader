@@ -13,7 +13,7 @@ import { predicateSortWithoutOkina } from "./helpers";
 import { useGlobal, type VisibilitySettings } from "./useGlobal";
 import { OleloMaamauDialog } from "./OleloMaamauDialog";
 import { label } from "./labels";
-import { DrawerNav } from "./DrawerNav";
+import { DrawerNavFilter } from "./DrawerNav";
 
 export function SettingsDrawer() {
   const { modeTK } = useGlobal();
@@ -21,7 +21,7 @@ export function SettingsDrawer() {
     <>
       <div className="absolute w-full h-full border-r border-neutral-200 inset-0 bg-white/98 overscroll-contain overflow-y-auto">
         <div className="sticky top-0 w-full z-30 mr-px">
-          <DrawerNav />
+          <DrawerNavFilter />
           <hr className="opacity-15" />
         </div>
         <div className="p-4 py-8">
@@ -32,7 +32,7 @@ export function SettingsDrawer() {
         </div>
         <hr className="opacity-20 mb-4" />
         <div className="p-4">
-          <Title>{label(modeTK, "Ke Kakaupii")}</Title>
+          <Title>{label(modeTK, "Ke Kakau Pii")}</Title>
         </div>
         <div className="p-4">
           <Section

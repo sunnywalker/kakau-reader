@@ -32,7 +32,7 @@ export const [pronouns, pronounsLower] = generate([
   //
   "Kaʻu",
   "Koʻu",
-  "Kuʻu",
+  // "Kuʻu",
   "Naʻu",
   "Noʻu",
   "Oʻu",
