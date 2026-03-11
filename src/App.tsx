@@ -156,11 +156,17 @@ function Body() {
       }}
     >
       <div className="print:hidden">
+        <div className="mb-4">
+          <div className="mb-4">
+            <Title>Moolelo</Title>
+          </div>
+          <div className="mb-8 flex gap-4 justify-between flex-wrap">
+            <StorySelect />
+          </div>
+        </div>
+         <hr className="opacity-10 print:hidden mb-8" />
         <div className="mb-4 flex gap-4 justify-between flex-wrap">
           <Title>Pa’i hakahaka</Title>
-        </div>
-        <div className="mb-4 flex gap-4 justify-between flex-wrap">
-          <StorySelect />
           {/* <Vis when={isEditing}>
               <Button
                 // color="inherit"
@@ -174,7 +180,7 @@ function Body() {
             </Vis> */}
           <div className="flex gap-4 justify-end flex-1 content-center">
             <Block when={isEditing}>
-              <div className="my-4">
+              <div className="">
                 <Button
                   disabled={!text}
                   color="info"
@@ -187,7 +193,7 @@ function Body() {
                 </Button>
               </div>
             </Block>
-            <div className="my-4">
+            <div className="">
               <Block when={!isEditing}>
                 <Button
                   color="info"
