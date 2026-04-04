@@ -1,1 +1,3 @@
-# Kakau
+# Kakau Pii
+
+Hawaiian furigana
