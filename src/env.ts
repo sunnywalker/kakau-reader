@@ -1,5 +1,9 @@
 export const viteCollectionsUrl = import.meta.env.VITE_COLLECTIONS_URL;
 
+type Language = "hawaiian" | "samoan" | "english";
+export const viteLanguage: Language =
+  import.meta.env.VITE_LANGUAGE || "english";
+
 export const viteLogoWidth = import.meta.env.VITE_LOGO_WIDTH;
 export const viteLogoUrlLight = import.meta.env.VITE_LOGO_URL_LIGHT;
 export const viteLogoUrlDark = import.meta.env.VITE_LOGO_URL_DARK;

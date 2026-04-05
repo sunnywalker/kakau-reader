@@ -44,7 +44,7 @@ export function StorySelect() {
     <div className="w-full sm:w-fit">
       <FormControl sx={{ minWidth: 120, width: "100%" }}>
         <InputLabel htmlFor="grouped-native-select">
-          {label(orthography, "Moolelo")}
+          {label(orthography, "HeaderStories")}
         </InputLabel>
         <Select
           native

@@ -34,7 +34,7 @@ export function HomePage() {
       <div className="print:hidden">
         <div className="mb-4">
           <div className="mb-6 flex gap-4">
-            <Title>{label(orthography, "NaWaihona")}</Title>
+            <Title>{label(orthography, "HeaderTheCollections")}</Title>
             {collectionsQuery?.isLoading && (
               <>
                 <img className="visible-dark h-8 w-8" src="/loader-dark.gif" />
@@ -72,7 +72,7 @@ export function HomePage() {
         </div>
         <hr className="opacity-10 print:hidden mb-8" />
         <div className="mb-4 flex gap-4 justify-between flex-wrap">
-          <Title>{label(orthography, "Pa’i hakahaka")}</Title>
+          <Title>{label(orthography, "HeaderForm")}</Title>
           <div className="flex gap-4 justify-end flex-1 content-center">
             <Block when={isEditing}>
               <div className="">
@@ -84,7 +84,7 @@ export function HomePage() {
                   variant="outlined"
                   className="flex gap-2 text-nowrap"
                 >
-                  <SmVis>{label(orthography, "Holoi")}</SmVis>{" "}
+                  <SmVis>{label(orthography, "ButtonClearForm")}</SmVis>{" "}
                   <IconDelete className="w-5" />
                 </Button>
               </div>
@@ -98,7 +98,7 @@ export function HomePage() {
                   variant="contained"
                   className="flex gap-2"
                 >
-                  {label(orthography, "Hoololi")} <IconEdit className="w-5" />
+                  {label(orthography, "ButtonEdit")} <IconEdit className="w-5" />
                 </Button>
               </Block>
 
@@ -148,11 +148,6 @@ export function HomePage() {
           <PrintButton />
         </div>
         <div className="min-h-[80dvh] pb-16">
-          {!text && (
-            <i className="text-neutral-500 wrap-break-word overflow-hidden">
-              {label(orthography, "E hookomo i ka olelo i luna")}
-            </i>
-          )}
           <LineContainer>
             {text.split("\n").map((line) => {
               return <Line text={line} />;

@@ -1,59 +1,89 @@
+import { viteLanguage } from "./env";
 import type { Orthography } from "./url";
 
-const labels = {
-  huna: {
-    marked: "hūnā",
-    unmarked: "huna",
-  },
-  hoike: {
-    marked: "hōʻike",
-    unmarked: "hoike",
-  },
-  kakau: {
-    marked: "kākau",
-    unmarked: "kakau",
-  },
+type Labels = {
+  marked: string;
+  unmarked: string;
+};
 
-  "Ke Kakau Pii": {
+type LabelId =
+  | "HeaderTheFurigana"
+  | "PlaceholderEnterYourTextHere"
+  | "HeaderStories"
+  | "HeaderTheCollections"
+  | "HeaderForm"
+  | "ButtonEdit"
+  | "ButtonClearForm";
+
+const hawaiianLabels: Record<LabelId, Labels> = {
+  HeaderTheFurigana: {
     marked: "Ke Kākau Piʻi",
     unmarked: "Ke Kakau Pii",
   },
-  "Ka Pela Ana": {
-    marked: "Ka Pela ʻAna",
-    unmarked: "Ka Pela Ana",
-  },
-  "E hookomo i ka olelo i luna": {
-    marked: "E hoʻokomo i ka ʻōlelo i luna",
-    unmarked: "E hookomo i ka olelo i luna",
-  },
-  "E hookomo i ka olelo i loko nei": {
+  PlaceholderEnterYourTextHere: {
     marked: "E hoʻokomo i ka ʻōlelo i loko nei",
     unmarked: "E hookomo i ka olelo i loko nei",
   },
-  Moolelo: {
+  HeaderStories: {
     marked: "Moʻolelo",
     unmarked: "Moolelo",
   },
-  NaWaihona: {
+  HeaderTheCollections: {
     marked: "Nā Waihona",
     unmarked: "Na Waihona",
   },
-  "Pa’i hakahaka": {
+  HeaderForm: {
     marked: "Paʻi hakahaka",
     unmarked: "Pa’i hakahaka",
   },
-  Hoololi: {
+  ButtonEdit: {
     marked: "Hoʻololi",
     unmarked: "Hoololi",
   },
-  Holoi: {
+  ButtonClearForm: {
     marked: "Holoi",
     unmarked: "Holoi",
   },
-} as const;
+};
+const englishLabels: Record<LabelId, Labels> = {
+  HeaderTheFurigana: {
+    marked: "Helper Text",
+    unmarked: "Helper Text",
+  },
+  PlaceholderEnterYourTextHere: {
+    marked: "Enter Your Text Here",
+    unmarked: "Enter Your Text Here",
+  },
+  HeaderStories: {
+    marked: "Stories",
+    unmarked: "Stories",
+  },
+  HeaderTheCollections: {
+    marked: "Collections",
+    unmarked: "Collections",
+  },
+  HeaderForm: {
+    marked: "Your Text",
+    unmarked: "Your Text",
+  },
+  ButtonEdit: {
+    marked: "Edit",
+    unmarked: "Edit",
+  },
+  ButtonClearForm: {
+    marked: "Clear",
+    unmarked: "Clear",
+  },
+};
 
-export function label(orthography: Orthography, id: keyof typeof labels) {
-  const record = labels[id];
+export function label(
+  orthography: Orthography,
+  id: keyof typeof hawaiianLabels,
+) {
+  let dict: Record<LabelId, Labels> = englishLabels;
+  if (viteLanguage === "hawaiian") dict = hawaiianLabels;
+
+  const record = dict[id];
   if (orthography === "marked") return record.marked;
   return record.unmarked;
 }

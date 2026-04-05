@@ -23,7 +23,7 @@ export function UnmarkedSettingsDrawer() {
         </div>
 
         <div className="p-4">
-          <Title>{label(orthography, "Ke Kakau Pii")}</Title>
+          <Title>{label(orthography, "HeaderTheFurigana")}</Title>
         </div>
         <div className="p-4">
           <Section
