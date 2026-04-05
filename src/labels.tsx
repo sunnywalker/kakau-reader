@@ -46,9 +46,9 @@ const labels = {
     marked: "Hoʻololi",
     unmarked: "Hoololi",
   },
-  KapaeAku: {
-    marked: "Kāpae aku",
-    unmarked: "Kapae aku",
+  Holoi: {
+    marked: "Holoi",
+    unmarked: "Holoi",
   },
 } as const;
 

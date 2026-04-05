@@ -7,7 +7,7 @@ import { SmVis, Block } from "./Vis";
 import { Title } from "./Title";
 import { label } from "./labels";
 import { IconDelete } from "./material/IconDelete";
-import { Line } from "./Line";
+import { Line, LineContainer } from "./Line";
 import { useLocation, useNavigate } from "react-router";
 import { PrintButton } from "./PrintButton";
 
@@ -84,7 +84,7 @@ export function HomePage() {
                   variant="outlined"
                   className="flex gap-2 text-nowrap"
                 >
-                  <SmVis>{label(orthography, "KapaeAku")}</SmVis>{" "}
+                  <SmVis>{label(orthography, "Holoi")}</SmVis>{" "}
                   <IconDelete className="w-5" />
                 </Button>
               </div>
@@ -153,9 +153,11 @@ export function HomePage() {
               {label(orthography, "E hookomo i ka olelo i luna")}
             </i>
           )}
-          {text.split("\n").map((line) => {
-            return <Line text={line} />;
-          })}
+          <LineContainer>
+            {text.split("\n").map((line) => {
+              return <Line text={line} />;
+            })}
+          </LineContainer>
         </div>
       </Block>
     </div>
