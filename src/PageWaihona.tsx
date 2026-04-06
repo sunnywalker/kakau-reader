@@ -3,6 +3,7 @@ import { useGlobal } from "./useGlobal";
 import { Title } from "./Title";
 import cx from "classnames";
 import { sortByDayCyclicalPredicate } from "./sorts";
+import { Markdown } from "./Markdown";
 
 export function WaihonaPage() {
   const { collectionsQuery } = useGlobal();
@@ -39,6 +40,9 @@ export function WaihonaHomePage() {
       <div className="mb-6">
         <Title>{currentCollection?.title}</Title>
       </div>
+      {currentCollection?.descriptionMarkdown && (
+        <Markdown markdown={currentCollection?.descriptionMarkdown} />
+      )}
       <div className="mb-8">
         {stories.map((s, i) => {
           return (

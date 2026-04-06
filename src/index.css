@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@plugin '@tailwindcss/typography';
 
 .no-select {
   -webkit-user-select: none; /* iOS Safari */
@@ -48,6 +49,16 @@
   --bg-nav: rgb(30, 31, 32);
   --bg-secondary: rgb(59, 59, 59);
   --text-hl: #29b6f6;
+}
+
+.prose-auto {
+  @apply prose;
+}
+
+:root[data-theme="dark"] {
+  .prose-auto {
+    @apply prose prose-invert;
+  }
 }
 
 .visible-light {

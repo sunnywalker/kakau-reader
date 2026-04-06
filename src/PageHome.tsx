@@ -144,7 +144,7 @@ export function HomePage() {
       <Block when={!!text}>
         <hr className="opacity-10 print:hidden mb-8" />
         <div className="mb-4 flex gap-4 justify-between print:hidden">
-          <Title>Hopena</Title>
+          <Title>{label(orthography, "HeaderResult")}</Title>
           <PrintButton />
         </div>
         <div className="min-h-[80dvh] pb-16">

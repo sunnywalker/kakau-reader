@@ -13,7 +13,8 @@ type LabelId =
   | "HeaderTheCollections"
   | "HeaderForm"
   | "ButtonEdit"
-  | "ButtonClearForm";
+  | "ButtonClearForm"
+  | "HeaderResult";
 
 const hawaiianLabels: Record<LabelId, Labels> = {
   HeaderTheFurigana: {
@@ -44,6 +45,10 @@ const hawaiianLabels: Record<LabelId, Labels> = {
     marked: "Holoi",
     unmarked: "Holoi",
   },
+  HeaderResult: {
+    marked: "Hopena",
+    unmarked: "Hopena",
+  },
 };
 const englishLabels: Record<LabelId, Labels> = {
   HeaderTheFurigana: {
@@ -73,6 +78,10 @@ const englishLabels: Record<LabelId, Labels> = {
   ButtonClearForm: {
     marked: "Clear",
     unmarked: "Clear",
+  },
+  HeaderResult: {
+    marked: "Result",
+    unmarked: "Result",
   },
 };
 
