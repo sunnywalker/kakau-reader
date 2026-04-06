@@ -8,8 +8,8 @@ import { Title } from "./Title";
 import { label } from "./labels";
 import { IconDelete } from "./material/IconDelete";
 import { Line, LineContainer } from "./Line";
-import { useLocation, useNavigate } from "react-router";
 import { PrintButton } from "./PrintButton";
+import { CollectionPreviews } from "./CollectionPreviews";
 
 export function HomePage() {
   const {
@@ -20,9 +20,6 @@ export function HomePage() {
     orthography,
     collectionsQuery,
   } = useGlobal();
-
-  const navigate = useNavigate();
-  const location = useLocation();
 
   return (
     <div
@@ -46,28 +43,7 @@ export function HomePage() {
             )}
           </div>
           <div className="mb-8">
-            {collectionsQuery?.data?.collections?.map((c) => {
-              return (
-                <div
-                  className="cursor-pointer mb-5 rounded-lg bg-(--bg-secondary) overflow-hidden"
-                  onClick={() => {
-                    navigate({
-                      pathname: `/waihona/${c.id}`,
-                      search: location.search,
-                    });
-                  }}
-                >
-                  <div className="pt-2 pb-3 px-3 w-full text-lg opacity-85 hover:opacity-100 hover:bg-neutral-300/10">
-                    <div>
-                      <span className="font-semibold">{c.title}</span>
-                    </div>
-                    <div>
-                      <span className="text-base opacity-65">{c.subtitle}</span>
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
+            <CollectionPreviews type="tiles" />
           </div>
         </div>
         <hr className="opacity-10 print:hidden mb-8" />
@@ -98,7 +74,8 @@ export function HomePage() {
                   variant="contained"
                   className="flex gap-2"
                 >
-                  {label(orthography, "ButtonEdit")} <IconEdit className="w-5" />
+                  {label(orthography, "ButtonEdit")}{" "}
+                  <IconEdit className="w-5" />
                 </Button>
               </Block>
 

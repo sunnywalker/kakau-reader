@@ -1,4 +1,4 @@
-import { viteLanguage } from "./env";
+import { viteDataLanguage } from "./env";
 import type { Orthography } from "./url";
 
 type Labels = {
@@ -50,6 +50,7 @@ const hawaiianLabels: Record<LabelId, Labels> = {
     unmarked: "Hopena",
   },
 };
+
 const englishLabels: Record<LabelId, Labels> = {
   HeaderTheFurigana: {
     marked: "Helper Text",
@@ -90,7 +91,7 @@ export function label(
   id: keyof typeof hawaiianLabels,
 ) {
   let dict: Record<LabelId, Labels> = englishLabels;
-  if (viteLanguage === "hawaiian") dict = hawaiianLabels;
+  if (viteDataLanguage === "hawaiian") dict = hawaiianLabels;
 
   const record = dict[id];
   if (orthography === "marked") return record.marked;

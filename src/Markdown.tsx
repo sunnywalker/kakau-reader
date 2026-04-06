@@ -6,7 +6,13 @@ export function Markdown({ markdown }: { markdown: string }) {
   return (
     <>
       <div className="prose-auto">
-        <ReactMarkdown>{markdown}</ReactMarkdown>
+        <ReactMarkdown
+          components={{
+            img: ({ ...props }) => <img {...props} className="rounded-lg" />,
+          }}
+        >
+          {markdown}
+        </ReactMarkdown>
       </div>
     </>
   );

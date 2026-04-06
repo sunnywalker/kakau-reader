@@ -7,12 +7,20 @@ import { SpaceBar } from "./Spacebar";
 import { useParams } from "react-router";
 
 export function StickyFooter() {
-  const { mooleloId } = useParams();
-  const { orthography } = useGlobal();
+  const { waihonaId, mooleloId } = useParams();
+  const { text, orthography } = useGlobal();
+
+  const hide =
+    orthography == Orthography.marked ||
+    // is on waihona page
+    (waihonaId && !mooleloId) ||
+    // is on home page and no text
+    (!waihonaId && !mooleloId && !text);
+
   return (
     <div
       className={cx("print:hidden sticky bottom-0 z-10 bg-(--bg-base)", {
-        hidden: orthography == Orthography.marked || !mooleloId,
+        hidden: hide,
       })}
     >
       <hr className="opacity-10" />

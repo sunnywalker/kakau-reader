@@ -1,18 +1,27 @@
+//  Data Source
 export const viteCollectionsUrl = import.meta.env.VITE_COLLECTIONS_URL;
 
-type Language = "hawaiian" | "samoan" | "english";
-export const viteLanguage: Language = import.meta.env.VITE_LANGUAGE || "english";
+//  Languages
+type DataLanguage = "hawaiian" | "samoan"
+export const viteDataLanguage: DataLanguage = import.meta.env.VITE_DATA_LANGUAGE;
 
+type UILanguage = "hawaiian" | "english"
+export const viteUILanguage: UILanguage = import.meta.env.VITE_UI_LANGUAGE || "english";
+
+// Logo
 export const viteLogoWidth = import.meta.env.VITE_LOGO_WIDTH;
 export const viteLogoUrlLight = import.meta.env.VITE_LOGO_URL_LIGHT;
 export const viteLogoUrlDark = import.meta.env.VITE_LOGO_URL_DARK;
 
+// Dictionary
 export const viteDictionaryUrl = import.meta.env.VITE_DICTIONARY_URL;
 
 export const viteDictionaryAllowedOrigins = (JSON.parse(
   import.meta.env.VITE_DICTIONARY_ALLOWED_ORIGINS,
 ) || []) as string[];
 
+
+// Navigation Drawer
 export const viteNavDrawerUrl = import.meta.env.VITE_NAV_DRAWER_URL;
 
 export const viteNavDrawerAllowedOrigins = (JSON.parse(

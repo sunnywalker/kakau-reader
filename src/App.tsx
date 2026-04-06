@@ -9,6 +9,7 @@ import { useLayoutEffect } from "react";
 import { useParams } from "react-router";
 
 export function App() {
+
   const { mooleloId, waihonaId } = useParams();
 
   useLayoutEffect(() => {
