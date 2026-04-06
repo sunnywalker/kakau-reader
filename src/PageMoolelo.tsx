@@ -4,6 +4,7 @@ import { Title } from "./Title";
 import { Line, LineContainer } from "./Line";
 import { formatHawaiianDate } from "./date";
 import { PrintButton } from "./PrintButton";
+import { viteEnablePrintButton } from "./env";
 
 export function MooleloPage() {
   const { collectionsQuery, orthography } = useGlobal();
@@ -36,9 +37,7 @@ export function MooleloPage() {
             <span>{subtitle}</span>
           </div>
         </div>
-        <div>
-          <PrintButton />
-        </div>
+        <div>{viteEnablePrintButton && <PrintButton />}</div>
       </div>
       {currentMoolelo?.synopsis && (
         <div className="p-2 rounded-lg bg-(--bg-secondary) print:bg-transparent mb-4">

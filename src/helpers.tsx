@@ -48,7 +48,6 @@ export function coerceOkinas(text: string): string {
   );
 }
 
-
 export type ParsedWord = {
   original: string;
   leading: string;

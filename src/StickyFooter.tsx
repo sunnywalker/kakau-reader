@@ -5,6 +5,10 @@ import { DrawerIcons } from "./DrawerNav";
 import { Orthography } from "./url";
 import { SpaceBar } from "./Spacebar";
 import { useParams } from "react-router";
+import {
+  viteEnableUnmarkedOrthographyLevelsButton,
+  viteEnableUnmarkedOrthographySettingsButton,
+} from "./env";
 
 export function StickyFooter() {
   const { waihonaId, mooleloId } = useParams();
@@ -27,9 +31,11 @@ export function StickyFooter() {
       <div className="flex justify-between print:hidden pt-4 pb-4">
         <div className="flex-0"></div>
         <div className="flex-1 flex justify-center gap-4 items-center">
-          <DrawerIcons show={["filter"]} />
+          {viteEnableUnmarkedOrthographySettingsButton && (
+            <DrawerIcons show={["filter"]} />
+          )}
           <SpaceBar />
-          <Levels />
+          {viteEnableUnmarkedOrthographyLevelsButton && <Levels />}
         </div>
 
         <div className="flex-0"></div>

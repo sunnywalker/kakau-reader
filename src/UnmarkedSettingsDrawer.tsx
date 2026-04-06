@@ -11,7 +11,7 @@ import { predicateSortWithoutOkina } from "./helpers";
 import { useGlobal, type VisibilitySettings } from "./useGlobal";
 import { UnmarkedOleloMaamauDialog } from "./UnmarkedOleloMaamauDialog";
 import { label } from "./labels";
-import { DrawerNavFilter } from "./DrawerNav";
+import { UnmarkedSettingsDrawerHeader } from "./DrawerNav";
 
 export function UnmarkedSettingsDrawer() {
   const { orthography } = useGlobal();
@@ -19,7 +19,7 @@ export function UnmarkedSettingsDrawer() {
     <>
       <div className="absolute w-full h-full inset-0 bg-(--bg-base) overscroll-contain overflow-y-auto">
         <div className="sticky top-0 w-full z-30 mr-px">
-          <DrawerNavFilter />
+          <UnmarkedSettingsDrawerHeader />
         </div>
 
         <div className="p-4">

@@ -7,9 +7,13 @@ import { Outlet } from "react-router";
 import { StickyFooter } from "./StickyFooter";
 import { useLayoutEffect } from "react";
 import { useParams } from "react-router";
+import {
+  viteEnableNavDrawerButton,
+  viteEnableNavLogo,
+  viteEnableThemeButton,
+} from "./env";
 
 export function App() {
-
   const { mooleloId, waihonaId } = useParams();
 
   useLayoutEffect(() => {
@@ -21,15 +25,19 @@ export function App() {
     <SidebarLayout>
       <div className="flex justify-between print:hidden">
         <div className="ml-1 flex gap-2 items-center">
-          <NavigationDrawer anchor="left" />
-          <div className="mb-2">
-            <Logo />
-          </div>
+          {viteEnableNavDrawerButton && <NavigationDrawer anchor="left" />}
+          {viteEnableNavLogo && (
+            <div className="mb-2">
+              <Logo />
+            </div>
+          )}
         </div>
         <div className="print:hidden flex items-center gap-4">
-          <div className="opacity-50 hover:opacity-100">
-            <ThemeToggle />
-          </div>
+          {viteEnableThemeButton && (
+            <div className="opacity-50 hover:opacity-100">
+              <ThemeToggle />
+            </div>
+          )}
         </div>
       </div>
       <StickyNav />

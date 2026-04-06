@@ -42,3 +42,7 @@ export const viteEnableDictionaryButton = import.meta.env.VITE_ENABLE_DICTIONARY
 export const viteEnableOrthographyButton = import.meta.env.VITE_ENABLE_ORTHOGRAPHY_BUTTON;
 export const viteEnableUnmarkedOrthographyLevelsButton = import.meta.env.VITE_ENABLE_UNMARKED_ORTHOGRAPHY_LEVELS_BUTTON;
 export const viteEnableUnmarkedOrthographySettingsButton = import.meta.env.VITE_ENABLE_UNMARKED_ORTHOGRAPHY_SETTINGS_BUTTON;
+
+// Sections
+export const viteEnableSectionCollections = import.meta.env.VITE_ENABLE_SECTION_COLLECTIONS;
+export const viteEnableSectionForm = import.meta.env.VITE_ENABLE_SECTION_FORM;

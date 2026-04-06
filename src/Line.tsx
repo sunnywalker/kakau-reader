@@ -8,6 +8,7 @@ import {
 } from "./helpers";
 import { setDictionaryLoading } from "./dictionaryLoading";
 import { Orthography } from "./url";
+import cx from "classnames";
 
 function getFontSize(num: number): number {
   if (num === 15) return 44;
@@ -61,6 +62,7 @@ export function Line({ text }: { text: string }) {
       }}
     >
       {text.split(" ").map((token) => {
+        //
         const { leading, core: word, trailing } = removePunctuation(token);
         const removed = removeHawaiianDiacritics(word);
         const removedDoubleVowel = removeDoubleVowelOkinas(word);
@@ -100,7 +102,11 @@ export function Line({ text }: { text: string }) {
             >
               <ruby>
                 {leading}
-                <span className="hover:underline hover:opacity-50">
+                <span
+                  className={cx({
+                    "hover:underline hover:opacity-50": true,
+                  })}
+                >
                   {isMarked ? word : text}
                 </span>
                 {trailing}

@@ -6,6 +6,11 @@ import { ThemeMode } from "./url";
 import { useGlobal } from "./useGlobal";
 import cx from "classnames";
 import { BackButton } from "./BackButton";
+import {
+  viteEnableFontSizeButton,
+  viteEnableNavDrawerButton,
+  viteEnableOrthographyButton,
+} from "./env";
 
 export function StickyNav() {
   const { theme } = useGlobal();
@@ -14,14 +19,16 @@ export function StickyNav() {
       <div className="bg-(--bg-base) flex gap-2 justify-between print:hidden pt-4 pb-2 border-b border-(--line)">
         <div className="flex gap-4">
           <BackButton /*  */ />
-          <DrawerIcons show={["dictionary"]} />
+          {viteEnableNavDrawerButton && <DrawerIcons show={["dictionary"]} />}
         </div>
         <div></div>
         <div className="flex-0 flex gap-8 pr-4">
-          <FontSizeMenu />
-          <div className="pb-1.5">
-            <OrthographyToggle />
-          </div>
+          {viteEnableFontSizeButton && <FontSizeMenu />}
+          {viteEnableOrthographyButton && (
+            <div className="pb-1.5">
+              <OrthographyToggle />
+            </div>
+          )}
         </div>
       </div>
       <div className="mb-8">
