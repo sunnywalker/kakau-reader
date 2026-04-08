@@ -66,7 +66,7 @@ export function FontSizeMenu() {
 const FONT_MIN = 1;
 const FONT_MAX = 15;
 
-function clamp(num: number) {
+export function clamp(num: number) {
   return Math.max(Math.min(num, FONT_MAX), FONT_MIN);
 }
 
